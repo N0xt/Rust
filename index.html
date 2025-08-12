@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Выбор раздела — Rust Servers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container-main">
+    <h1 class="main-title">Выберите раздел серверов</h1>
+    <div class="section-buttons" role="list">
+      <button class="section-btn" data-section="rustopia" aria-label="Перейти к серверам Rustopia">
+        <span class="btn-icon">🔥</span> Rustopia
+      </button>
+      <button class="section-btn" data-section="rustoria" aria-label="Перейти к серверам Rustria">
+        <span class="btn-icon">🚀</span> Rustria
+      </button>
+      <button class="section-btn" data-section="rustzone" aria-label="Перейти к серверам Rustzone">
+        <span class="btn-icon">⚡</span> --
+      </button>
+      <button class="section-btn" data-section="rustik" aria-label="Перейти к серверам Rustik">
+        <span class="btn-icon">🔥</span> --
+      </button>
+      <button class="section-btn" data-section="rustworks" aria-label="Перейти к серверам Rustworks">
+        <span class="btn-icon">🛠️</span> --
+      </button>
+    </div>
+  </main>
+
+<script>
+  document.querySelectorAll('.section-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const section = btn.getAttribute('data-section');
+      if (section === 'rustopia') {
+        window.location.href = 'projects/rustopia.html'; // Путь для Rustopia
+      } else if (section === 'rustoria') {
+        window.location.href = 'rustoria/rustoria.html'; // Укажи свой путь для Rustria
+      } else if (section === 'rustzone') {
+        window.location.href = 'путь/к/странице/rustzone.html'; // Укажи свой путь для Rustzone
+      } else if (section === 'rustik') {
+        window.location.href = 'путь/к/странице/rustik.html'; // Укажи свой путь для Rustik
+      } else if (section === 'rustworks') {
+        window.location.href = 'путь/к/странице/rustworks.html'; // Укажи свой путь для Rustworks
+      } else {
+        alert(`Раздел ${section} пока не реализован.`);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
