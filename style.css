@@ -1,0 +1,119 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #121212;
+  color: #ff6f00;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Главный контейнер */
+.container-main {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 50px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow:
+    0 0 10px #ff6f00aa,
+    0 0 30px #ff6f0033,
+    0 0 60px #ff6f0022;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Заголовок */
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #ff9100;
+  text-shadow: 0 0 12px #ff6f00aa;
+  letter-spacing: 0.03em;
+}
+
+/* Блок с кнопками */
+.section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Кнопки выбора */
+.section-btn {
+  background: linear-gradient(90deg, #ff6f00, #ffa726);
+  border: none;
+  border-radius: 12px;
+  padding: 18px 28px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #121212;
+  cursor: pointer;
+  box-shadow: 0 6px 18px #ff6f0077;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.4s ease,
+    transform 0.2s ease;
+  user-select: none;
+}
+
+.section-btn .btn-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Ховер эффекты */
+.section-btn:hover,
+.section-btn:focus {
+  background: linear-gradient(90deg, #ffa726, #ffb74d);
+  box-shadow:
+    0 12px 30px #ff6f00dd,
+    0 0 30px #ff6f00cc,
+    0 0 60px #ff6f0099;
+  outline: none;
+  transform: translateY(-3px);
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Для маленьких экранов */
+@media (max-width: 420px) {
+  .container-main {
+    padding: 30px 25px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .section-btn {
+    font-size: 1.2rem;
+    padding: 14px 22px;
+  }
+}
