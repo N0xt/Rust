@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rustopia — Выбор сервера</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="servers.css" />
+  <style>
+    .spinner {
+      border: 4px solid #ccc;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .server-btn.active-server {
+      background-color: #eee;
+      border-left: 4px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" aria-label="index.html">← Назад</button>
+
+  <h1>Rustopia — Список серверов</h1>
+
+  <div class="servers-list" role="list">
+    <!-- Сервер 1 -->
+    <button class="server-btn" data-server-id="14876729" data-ip="USLarge.Rustopia.gg:28015" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/14876729">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustopia.gg - US Large
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 2 -->
+    <button class="server-btn" data-server-id="14876730" data-ip="EULarge.Rustopia.gg:28016" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/15079350">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/gb.svg" alt="Флаг Европы" />
+        Rustopia.gg - EU Large
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 3 -->
+    <button class="server-btn" data-server-id="14876731" data-ip="USSmall.Rustopia.gg:28017" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/14876730">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustopia.gg - US Small
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 4 -->
+    <button class="server-btn" data-server-id="14876732" data-ip="EUSmall.Rustopia.gg:28018" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/15096801">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/gb.svg" alt="Флаг Европы" />
+        Rustopia.gg - EU Main
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 5 -->
+    <button class="server-btn" data-server-id="14876733" data-ip="USHighPop.Rustopia.gg:28019" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/14876662">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustopia.gg - US Medium
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 6 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustopia.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/24558666">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/au.svg" alt="Флаг Европы" />
+        Rustopia.gg - AU Main
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 7 -->
+    <button class="server-btn" data-server-id="14876735" data-ip="USMid.Rustopia.gg:28021" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/14876661">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustopia.gg - US Main | Premium
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 8 -->
+    <button class="server-btn" data-server-id="14876736" data-ip="EUMid.Rustopia.gg:28022" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/14876736">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/gb.svg" alt="Флаг Европы" />
+        Rustopia.gg - EU Small
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 9 -->
+    <button class="server-btn" data-server-id="14876737" data-ip="USLowPop.Rustopia.gg:28023" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/14876737">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/gb.svg" alt="Флаг США" />
+        Rustopia.gg - EU Medium
+      </span><span>▶</span>
+    </button>
+  </div>
+
+  <!-- Модальное окно (если нужно для других целей) -->
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal">
+      <button class="modal-close" aria-label="Закрыть окно">×</button>
+      <h2 id="modal-title">Информация о сервере</h2>
+      <div class="modal-content" id="modal-content">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="servers.js"></script>
+</body>
+</html>
