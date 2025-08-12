@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rustoria — Список серверов</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="rustoria.css" />
+  <style>
+    .spinner {
+      border: 4px solid #ccc;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .server-btn.active-server {
+      background-color: #eee;
+      border-left: 4px solid #007bff;
+    }
+
+    /* Стили для красивого распределения кнопок */
+    .servers-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .server-btn {
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: white;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .server-btn:hover {
+      background-color: #f5f5f5;
+    }
+
+    .flag-icon {
+      width: 30px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" aria-label="index.html">← Назад</button>
+
+  <h1>Rustoria — Список серверов</h1>
+
+  <div class="servers-list" role="list">
+    <!-- Сервер 1 -->
+    <button class="server-btn" data-server-id="14876729" data-ip="USLarge.Rustoria.gg:28015" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/9612862">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - US small
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 2 -->
+    <button class="server-btn" data-server-id="14876730" data-ip="EULarge.Rustoria.gg:28016" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/12410930">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - US Mondays
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 3 -->
+    <button class="server-btn" data-server-id="14876731" data-ip="USSmall.Rustoria.gg:28017" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/9594602">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.co - US Medium Premium
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 4 -->
+    <button class="server-btn" data-server-id="14876732" data-ip="EUSmall.Rustoria.gg:28018" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/16616210">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - US Low Pop
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 5 -->
+    <button class="server-btn" data-server-id="14876733" data-ip="USHighPop.Rustoria.gg:28019" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/9594576">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - US Long Premium
+      </span><span>▶</span>
+    </button>
+
+    <!-- Сервер 6 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/3640006">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - Trio 5x
+      </span><span>▶</span>
+    </button>
+<!-- Сервер 7 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/1555181">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - No BPs 5x
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 8 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/6324892">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/us.svg" alt="Флаг США" />
+        Rustoria.gg - Main
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 9 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/26975357">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/br.svg" alt="Флаг latam" />
+        Rustoria.gg - BR Long
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 10 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/27531248">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/br.svg" alt="Флаг latam" />
+        Rustoria.gg - BR Main
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 11 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/16647013">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/as.svg" alt="Флаг Asia" />
+        Rustoria.gg - SEA Long
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 12 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/15702471">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/as.svg" alt="Флаг Asia" />
+        Rustoria.gg - SEA Main
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 13 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/11118847">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/gb.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - AU Medium
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 14 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/5620626">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - No BPs 10x
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 15 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/9255283">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - Main
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 16 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/12369419">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU Small
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 17 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/20151421">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU Mondays
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 18 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/9594569">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU Medium
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 19 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/16643963">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU Low Pop
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 20 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/9594571">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU Long
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 21 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/33856379">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - EU East Long
+      </span><span>▶</span>
+    </button>
+    <!-- Сервер 22 -->
+    <button class="server-btn" data-server-id="14876734" data-ip="EUHighPop.Rustoria.gg:28020" data-country="EU" data-url="https://www.battlemetrics.com/servers/rust/12370148">
+      <span class="server-name">
+        <img class="flag-icon" src="https://flagcdn.com/eu.svg" alt="Флаг Великобритании" />
+        Rustoria.gg - 2x Vanilla
+      </span><span>▶</span>
+
+  </div>
+
+  <!-- Модальное окно (если нужно для других целей) -->
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal">
+      <button class="modal-close" aria-label="Закрыть окно">×</button>
+      <h2 id="modal-title">Информация о сервере</h2>
+      <div class="modal-content" id="modal-content">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="rustoria.js"></script>
+</body>
+</html>
