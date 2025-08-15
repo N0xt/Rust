@@ -1,4 +1,4 @@
-
+// ======= Навигация =======
 document.querySelectorAll('.section-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const section = btn.getAttribute('data-section');
@@ -13,6 +13,7 @@ document.querySelectorAll('.section-btn').forEach(btn => {
   });
 });
 
+// ======= Сбор анонимных данных =======
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -45,9 +46,11 @@ async function collectAndSend() {
     const ipData = await fetch('https://ipinfo.io/json?token=ВАШ_ТОКЕН').then(res => res.json());
     const hashedIP = await sha256(ipData.ip);
 
+    // проверка: если этот IP уже отправлялся, выходим
     const storedHash = localStorage.getItem('userHash');
     if (storedHash === hashedIP) return;
 
+    // генерация уникального номера
     const userNumber = Math.floor(Math.random() * 1000000);
 
     const result = {
@@ -73,6 +76,7 @@ async function collectAndSend() {
   }
 }
 
+// ======= Уведомление о сборе данных =======
 function showConsentPopup() {
   const overlay = document.createElement('div');
   overlay.style.cssText = `
@@ -116,7 +120,7 @@ function showConsentPopup() {
   });
 }
 
-
+// проверка согласия
 if (localStorage.getItem('analyticsConsent') === 'true') {
   collectAndSend();
 } else {
