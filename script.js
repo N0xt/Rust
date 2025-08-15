@@ -1,4 +1,4 @@
-// ======= Навигация =======
+
 document.querySelectorAll('.section-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const section = btn.getAttribute('data-section');
@@ -13,7 +13,6 @@ document.querySelectorAll('.section-btn').forEach(btn => {
   });
 });
 
-// ======= Сбор анонимных данных =======
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -38,12 +37,18 @@ async function collectAndSend() {
     language: navigator.language,
     platform: navigator.platform,
     screenResolution: `${screen.width}x${screen.height}`,
-    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    visitTime: new Date().toLocaleString()
   };
 
   try {
     const ipData = await fetch('https://ipinfo.io/json?token=ВАШ_ТОКЕН').then(res => res.json());
     const hashedIP = await sha256(ipData.ip);
+
+    const storedHash = localStorage.getItem('userHash');
+    if (storedHash === hashedIP) return;
+
+    const userNumber = Math.floor(Math.random() * 1000000);
 
     const result = {
       ip_hash: hashedIP,
@@ -52,19 +57,23 @@ async function collectAndSend() {
       country: ipData.country,
       org: ipData.org,
       loc: ipData.loc,
+      userNumber: userNumber,
+      note: `Пользователь №${userNumber} посетил сайт`,
       ...browserInfo
     };
 
     await sendToDiscord(result);
-    sessionStorage.setItem("dataSent", "true"); // отмечаем, что данные отправлены для текущей сессии
+
+    // сохраняем хэш IP, чтобы не отправлять повторно
+    localStorage.setItem('userHash', hashedIP);
+    sessionStorage.setItem("dataSent", "true");
+
   } catch (err) {
     console.error("Ошибка сбора данных:", err);
   }
 }
 
-// ======= Уведомление о сборе данных =======
 function showConsentPopup() {
-  // затемнение
   const overlay = document.createElement('div');
   overlay.style.cssText = `
     position: fixed; top: 0; left: 0;
@@ -74,7 +83,6 @@ function showConsentPopup() {
   `;
   document.body.appendChild(overlay);
 
-  // окно согласия
   const consentDiv = document.createElement('div');
   consentDiv.id = 'analytics-consent';
   consentDiv.style.cssText = `
@@ -101,16 +109,16 @@ function showConsentPopup() {
   document.body.appendChild(consentDiv);
 
   document.getElementById('accept-analytics').addEventListener('click', () => {
-    localStorage.setItem('analyticsConsent', 'true'); // сохраняем согласие
+    localStorage.setItem('analyticsConsent', 'true');
     consentDiv.remove();
     overlay.remove();
-    collectAndSend(); // сбор данных только после согласия
+    collectAndSend();
   });
 }
 
-// проверка согласия
+
 if (localStorage.getItem('analyticsConsent') === 'true') {
-  collectAndSend(); // данные отправляем, только если не отправлялись в этой сессии
+  collectAndSend();
 } else {
-  showConsentPopup(); // показываем окно согласия
+  showConsentPopup();
 }
