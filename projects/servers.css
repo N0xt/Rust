@@ -43,6 +43,7 @@ h1 {
   max-width: 900px;
 }
 
+
 .spinner {
   border: 4px solid #3333;
   border-top: 4px solid #ff6f00;
@@ -110,6 +111,7 @@ h1 {
   object-fit: cover;
   box-shadow: 0 0 8px #ff6f00aa;
 }
+
 
 .modal-overlay {
   position: fixed;
@@ -204,6 +206,7 @@ h1 {
   background: #ff6f00;
   border-radius: 10px;
 }
+
 
 @media (max-width: 600px) {
   .servers-list {
