@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SurviveNet</title>
+  <link rel="stylesheet" href="magicrust.css" />
+  <link rel="icon" href="../foto.png" type="image/png">
+  <style>
+    .spinner {
+      border: 4px solid #ccc;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .server-btn.active-server {
+      background-color: #eee;
+      border-left: 4px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" aria-label="index.html">← Назад</button>
+
+  <h1>Magic Rust — Список серверов</h1>
+
+  <div class="servers-list" role="list">
+    <!-- Сервер 1 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583027">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+         Magic Rust #1 Modded 2x (Solo)
+          <span>▶</span>
+    </button>
+
+    <!-- Сервер 2 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18651200">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #2 Modded 2x (Duo)
+         <span>▶</span>
+    </button>
+
+    <!-- Сервер 3 -->
+    <button class="server-btn" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/18583029">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #3 Modded 2x  (Trio)
+      <span>▶</span>
+    </button>
+
+    <!-- Сервер 4 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583023">
+
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #4 Modded 2x (Trio)
+        <span>▶</span>
+    </button>
+
+    <!-- Сервер 5 -->
+    <button class="server-btn" data-country="US" data-url="https://www.battlemetrics.com/servers/rust/18583017">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #5 Modded 2x (Duo)
+      <span>▶</span>
+    </button>
+
+    <!-- Сервер 6 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/20942372">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг Рф" />
+        Magic Rust #6 Modded 2x (Trio)
+      <span>▶</span>
+    </button>
+
+    <!-- Сервер 7 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583034">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #7 Modded 2x (Trio)
+      <span>▶</span>
+    </button>
+
+    <!-- Сервер 8 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583021">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #8 Modded 2x (Duo)
+       <span>▶</span>
+    </button>
+
+    <!-- Сервер 9 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/20942367">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #9 Vanilla 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 10 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/20943634">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг Рф" />
+        Magic Rust #10 Modded 2x (Trio)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 11 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/20942366">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #11 Modded 2x (Trio)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 12 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583030">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #12 Modded 2x (Duo)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 13 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/27081227">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #13 Vanilla 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 14 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18583019">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #14 Modded 2x (No limit)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 15 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18651201">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #15 Modded 2x (No limit)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 16 -->
+    <button class="server-btn" data-url="https://gamemonitoring.net/rust/servers/760787">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #16 Modded 2x (Solo)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 17 -->
+    <button class="server-btn" data-url="https://gamemonitoring.net/rust/servers/762979">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #17 Modded 2x (Duo)
+      ><span>▶</span>
+    </button>
+
+  <!-- Сервер 18 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/18566920">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #18 Vanilla 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 19 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/19542787">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #19 Vanilla 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 20 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/20942373">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #20 Vanilla 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 21 -->
+    <button class="server-btn" data-url="https://tsarvar.com/en/servers/rust/185.189.255.130:10000">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #22 Vanilla 2x (Biweekly)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 22 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/30310229">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #23 Vanilla 2x (Trio)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 23 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/30079024">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #24 Vanilla 2x (Trio)
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 24 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/33244869">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust #25 Casual 2x
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 25 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/27391134">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust Main
+      <span>▶</span>
+    </button>
+
+  <!-- Сервер 26 -->
+    <button class="server-btn" data-url="https://www.battlemetrics.com/servers/rust/28412620">
+        <img class="flag-icon" src="https://cdn.battlemetrics.com/app/assets/ru.addac.gif" alt="Флаг РФ" />
+        Magic Rust Long
+      <span>▶</span>
+    </button>
+  <script src="magicrust.js"></script>
+</body>
+</html>
