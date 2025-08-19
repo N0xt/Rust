@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #121212;
   color: #ff6f00;
@@ -16,6 +17,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Главный контейнер */
 .container-main {
   background: #1e1e1e;
   border-radius: 16px;
@@ -29,6 +32,8 @@ body {
     0 0 60px #ff6f0022;
   animation: fadeIn 1.2s ease forwards;
 }
+
+/* Заголовок */
 .main-title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -37,11 +42,15 @@ body {
   text-shadow: 0 0 12px #ff6f00aa;
   letter-spacing: 0.03em;
 }
+
+/* Блок с кнопками */
 .section-buttons {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
+/* Кнопки выбора */
 .section-btn {
   background: linear-gradient(90deg, #ff6f00, #ffa726);
   border: none;
@@ -62,11 +71,14 @@ body {
     transform 0.2s ease;
   user-select: none;
 }
+
 .section-btn .btn-icon {
   font-size: 1.8rem;
   line-height: 1;
   user-select: none;
 }
+
+/* Ховер эффекты */
 .section-btn:hover,
 .section-btn:focus {
   background: linear-gradient(90deg, #ffa726, #ffb74d);
@@ -77,6 +89,8 @@ body {
   outline: none;
   transform: translateY(-3px);
 }
+
+/* Анимация появления */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -87,17 +101,22 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Для маленьких экранов */
 @media (max-width: 420px) {
   .container-main {
     padding: 30px 25px;
   }
+
   .main-title {
     font-size: 2rem;
   }
+
   .section-btn {
     font-size: 1.2rem;
     padding: 14px 22px;
   }
+  /* телефоны */
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
@@ -106,11 +125,15 @@ body {
     width: 100%;
   }
 }
+
+/* планшеты */
 @media (min-width: 601px) and (max-width: 1024px) {
   .card {
     width: 48%;
   }
 }
+
+/* десктопы */
 @media (min-width: 1025px) {
   .card {
     width: 30%;
