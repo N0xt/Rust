@@ -6,8 +6,8 @@ document.querySelectorAll('.section-btn').forEach(btn => {
       case 'rustopia': window.location.href = 'rustopia/rustopia.html'; break;
       case 'rustoria': window.location.href = 'rustoria/rustoria.html'; break;
       case 'Magic Rust': window.location.href = 'magicrust/magicrust.html'; break;
-      case '-': window.location.href = 'путь/к/странице/rustik.html'; break;
-      case '-': window.location.href = 'путь/к/странице/rustworks.html'; break;
+      case '-': window.location.href = 'Error/Error.html'; break;
+      case '-': window.location.href = 'Error/Error.html'; break;
       default: alert(`Раздел ${section} пока не реализован.`); 
     }
   });
